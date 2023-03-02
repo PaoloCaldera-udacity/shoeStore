@@ -25,12 +25,36 @@ class LoginFragment : Fragment() {
     }
 
     fun register() {
+        if (!checkInputFiels())
+            return
+
         val action = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
         findNavController().navigate(action)
     }
 
     fun login() {
+        if (!checkInputFiels())
+            return
+
         val action = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
         findNavController().navigate(action)
+    }
+
+    private fun checkInputFiels(): Boolean {
+        binding.emailInputLayout.isErrorEnabled = false
+        binding.passwordInputLayout.isErrorEnabled = false
+
+        if (binding.emailEditText.text.isNullOrEmpty()) {
+            binding.emailInputLayout.isErrorEnabled = true
+            binding.emailInputLayout.error = "Empty value. Please, fill"
+            return false
+        }
+        if (binding.passwordEditText.text.isNullOrEmpty()) {
+            binding.passwordInputLayout.isErrorEnabled = true
+            binding.passwordInputLayout.error = "Empty value. Please, fill"
+            return false
+        }
+
+        return true
     }
 }
