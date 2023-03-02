@@ -12,5 +12,6 @@
     <string name="password_hint">Password</string>
     <string name="register_button">Register</string>
     <string name="login_button">Login</string>
+    <string name="error_message">Please, fill the entry</string>
 
 </resources>
