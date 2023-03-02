@@ -14,4 +14,10 @@
     <string name="login_button">Login</string>
     <string name="error_message">Please, fill the entry</string>
 
+    <!-- Welcome fragment -->
+    <string name="arg_user_email">userEmail</string>
+    <string name="welcome_text">Welcome,\n%s!</string>
+    <string name="welcome_description">We are glad that now\nyou are part of our shoe store!</string>
+    <string name="instructions_button">Read instructions</string>
+
 </resources>

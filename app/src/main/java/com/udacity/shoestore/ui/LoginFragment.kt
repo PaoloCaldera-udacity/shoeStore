@@ -32,7 +32,8 @@ class LoginFragment : Fragment() {
         if (!checkInputFiels())
             return
 
-        val action = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
+        val action = LoginFragmentDirections
+            .actionLoginFragmentToWelcomeFragment(binding.emailEditText.text.toString())
         findNavController().navigate(action)
     }
 
@@ -43,7 +44,8 @@ class LoginFragment : Fragment() {
         if (!checkInputFiels())
             return
 
-        val action = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
+        val action = LoginFragmentDirections
+            .actionLoginFragmentToWelcomeFragment(binding.emailEditText.text.toString())
         findNavController().navigate(action)
     }
 
