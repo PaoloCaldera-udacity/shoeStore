@@ -35,4 +35,12 @@
     <string name="logout_menu_option">Logout</string>
     <string name="logout_menu_content">Click to logout</string>
 
+    <!-- Shoe Detail fragment -->
+    <string name="shoe_name_text">Shoe Name</string>
+    <string name="shoe_company_text">Company</string>
+    <string name="shoe_size_text">Size</string>
+    <string name="shoe_description_text">Description</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
+
 </resources>
