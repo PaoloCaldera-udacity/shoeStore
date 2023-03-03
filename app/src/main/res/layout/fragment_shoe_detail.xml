@@ -132,7 +132,7 @@
                 android:id="@+id/size_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:textSize="16sp"
                 tools:text="43" />
 

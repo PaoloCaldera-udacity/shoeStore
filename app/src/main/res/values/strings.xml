@@ -43,4 +43,8 @@
     <string name="cancel_button">Cancel</string>
     <string name="save_button">Save</string>
 
+    <!-- Item List view -->
+    <string name="company_title_text">%s   %s</string>
+    <string name="size_text">Size: %f</string>
+
 </resources>
