@@ -1,10 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="instructionsFragment"
+            type="com.udacity.shoestore.ui.InstructionsFragment" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/title_text"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/instructions_textView"
+            app:layout_constraintEnd_toEndOf="@+id/instructions_textView"
+            app:layout_constraintStart_toStartOf="@+id/instructions_textView" />
+
+        <TextView
+            android:id="@+id/instructions_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/instructions_text"
+            android:textColor="?attr/colorOutline"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/begin_textView"
+            app:layout_constraintEnd_toEndOf="@+id/begin_textView"
+            app:layout_constraintStart_toStartOf="@+id/begin_textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/begin_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/begin_text"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.619" />
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorSecondary"
+            android:onClick="@{() -> instructionsFragment.start()}"
+            android:text="@string/start_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/begin_textView"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/begin_textView"
+            app:layout_constraintTop_toBottomOf="@+id/begin_textView"
+            app:layout_constraintVertical_bias="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

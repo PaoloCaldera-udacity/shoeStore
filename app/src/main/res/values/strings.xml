@@ -20,4 +20,12 @@
     <string name="welcome_description">We are glad that now\nyou are part of our shoe store!</string>
     <string name="instructions_button">Read instructions</string>
 
+    <!-- Instructions fragment -->
+    <string name="title_text">GUIDELINES</string>
+    <string name="instructions_text">This app is a shoe store, where you can record as many shoe items as you want.
+    The main screen consists of a list of shoe items: from that screen, you can click the "add" button to add a new shoe item to the list.
+    Before using the app, you need to register with a new login or to login with an existing user.</string>
+    <string name="begin_text">Start adding items!\nClick the button to begin.</string>
+    <string name="start_button">Start</string>
+
 </resources>
