@@ -45,6 +45,6 @@
 
     <!-- Item List view -->
     <string name="company_title_text">%s   %s</string>
-    <string name="size_text">Size: %f</string>
+    <string name="size_text">Size: %s</string>
 
 </resources>
