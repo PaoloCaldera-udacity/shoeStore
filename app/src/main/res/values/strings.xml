@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+
+    <!-- Navigation -->
+    <string name="login_label">Login</string>
+    <string name="welcome_label">Welcome!</string>
+    <string name="instructions_label">Instructions</string>
+    <string name="shoe_list_label">Shoe Store</string>
+
+    <!-- Login fragment -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="register_button">Register</string>
+    <string name="login_button">Login</string>
+    <string name="error_message">Please, fill the entry</string>
+
 </resources>
