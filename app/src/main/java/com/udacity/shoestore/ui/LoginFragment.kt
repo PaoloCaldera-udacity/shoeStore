@@ -32,7 +32,8 @@ class LoginFragment : Fragment() {
         if (!checkInputFiels())
             return
 
-        val action = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
+        val action = LoginFragmentDirections
+            .actionLoginFragmentToWelcomeFragment(binding.emailEditText.text.toString())
         findNavController().navigate(action)
     }
 
@@ -43,7 +44,8 @@ class LoginFragment : Fragment() {
         if (!checkInputFiels())
             return
 
-        val action = LoginFragmentDirections.actionLoginFragmentToWelcomeFragment()
+        val action = LoginFragmentDirections
+            .actionLoginFragmentToWelcomeFragment(binding.emailEditText.text.toString())
         findNavController().navigate(action)
     }
 
@@ -58,12 +60,14 @@ class LoginFragment : Fragment() {
         binding.passwordInputLayout.isErrorEnabled = false
 
         if (binding.emailEditText.text.isNullOrEmpty()) {
+            // Highlight in red the email box and display the error message
             binding.emailInputLayout.isErrorEnabled = true
             binding.emailInputLayout.error = resources.getString(R.string.error_message)
             return false
         }
 
         if (binding.passwordEditText.text.isNullOrEmpty()) {
+            // Highlight in red the password box and display the error message
             binding.passwordInputLayout.isErrorEnabled = true
             binding.passwordInputLayout.error = resources.getString(R.string.error_message)
             return false
