@@ -17,16 +17,7 @@ class SharedViewModel : ViewModel() {
         company: String,
         description: String
     ) {
-        _shoeList.value?.add(formatShoe(name, size, company, description))
-    }
-
-    private fun formatShoe(
-        name: String,
-        size: Double,
-        company: String,
-        description: String
-    ): Shoe {
-        return Shoe(name, size, company, description)
+        _shoeList.value?.add(Shoe(name, size, company, description))
     }
 
 }

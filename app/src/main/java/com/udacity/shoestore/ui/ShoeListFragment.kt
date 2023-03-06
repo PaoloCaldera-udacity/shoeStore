@@ -22,12 +22,17 @@ class ShoeListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentShoeListBinding.inflate(inflater, container, false)
         binding.shoeListFragment = this@ShoeListFragment
         binding.lifecycleOwner = viewLifecycleOwner
 
         for (item in sharedViewModel.shoeList.value!!) {
-            val listItemBinding = ListItemViewBinding.inflate(layoutInflater)
+            val listItemBinding = ListItemViewBinding.inflate(
+                LayoutInflater.from(binding.shoeListLinearLayout.context),
+                binding.shoeListLinearLayout,
+                false
+            )
             listItemBinding.shoeItem = item
             listItemBinding.lifecycleOwner = viewLifecycleOwner
 

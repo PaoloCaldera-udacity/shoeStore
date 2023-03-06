@@ -35,10 +35,12 @@ class ShoeDetailFragment : Fragment() {
     }
 
     fun save() {
-        checkInputFields()
+        if (!checkInputFields())
+            return
+
         sharedViewModel.addToList(
-            name = binding.nameTextView.text.toString(),
-            size = binding.sizeTextView.text.toString().toDouble(),
+            name = binding.nameEditText.text.toString(),
+            size = binding.sizeEditText.text.toString().toDouble(),
             company = binding.companyEditText.text.toString(),
             description = binding.descriptionEditText.text.toString()
         )
