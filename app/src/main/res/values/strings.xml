@@ -6,6 +6,7 @@
     <string name="welcome_label">Welcome!</string>
     <string name="instructions_label">Instructions</string>
     <string name="shoe_list_label">Shoe Store</string>
+    <string name="shoe_detail_label">Add new Shoe</string>
 
     <!-- Login fragment -->
     <string name="email_hint">Email</string>
@@ -27,5 +28,23 @@
     Before using the app, you need to register with a new login or to login with an existing user.</string>
     <string name="begin_text">Start adding items!\nClick the button to begin.</string>
     <string name="start_button">Start</string>
+
+    <!-- Shoe List fragment -->
+    <string name="scroll_content">List of shoes</string>
+    <string name="fab_content">Add a new shoe item</string>
+    <string name="logout_menu_option">Logout</string>
+    <string name="logout_menu_content">Click to logout</string>
+
+    <!-- Shoe Detail fragment -->
+    <string name="shoe_name_text">Shoe Name</string>
+    <string name="shoe_company_text">Company</string>
+    <string name="shoe_size_text">Size</string>
+    <string name="shoe_description_text">Description</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
+
+    <!-- Item List view -->
+    <string name="company_title_text">%s   %s</string>
+    <string name="size_text">Size: %s</string>
 
 </resources>
