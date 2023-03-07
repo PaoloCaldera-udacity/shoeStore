@@ -27,7 +27,7 @@ class ShoeListFragment : Fragment() {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
          */
         binding.apply {
-            shoeListFragment = this@ShoeListFragment        // layout variable
+            shoeListFragment = this@ShoeListFragment        // fragment layout variable
             lifecycleOwner = viewLifecycleOwner             // lifecycle owner
         }
 

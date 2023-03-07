@@ -13,6 +13,10 @@ class SharedViewModel : ViewModel() {
     private val _shoeList: MutableLiveData<MutableList<Shoe>> = MutableLiveData(mutableListOf())
     val shoeList: LiveData<MutableList<Shoe>> get() = _shoeList
 
+    // LiveData variable, containing the entries of the new Shoe object
+    private val _newShoeEntry: MutableLiveData<Shoe> = MutableLiveData()
+    val newShoeEntry: LiveData<Shoe> get() = _newShoeEntry
+
     // Login status. true = logged in; false = logged out
     private var loginStatus: Boolean = false
 
@@ -20,13 +24,8 @@ class SharedViewModel : ViewModel() {
     /**
      * Adds a Shoe item to the shoes list
      */
-    fun addToList(
-        name: String,
-        size: Double,
-        company: String,
-        description: String
-    ) {
-        _shoeList.value?.add(Shoe(name, size, company, description))
+    fun addToList() {
+        _shoeList.value?.add(newShoeEntry.value!!)
     }
 
 

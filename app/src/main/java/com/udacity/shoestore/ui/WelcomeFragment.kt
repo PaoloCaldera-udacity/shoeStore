@@ -31,7 +31,7 @@ class WelcomeFragment : Fragment() {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
          */
         binding.apply {
-            welcomeFragment = this@WelcomeFragment      // layout variable
+            welcomeFragment = this@WelcomeFragment      // fragment layout variable
             lifecycleOwner = viewLifecycleOwner         // lifecycle owner
         }
 

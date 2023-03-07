@@ -8,6 +8,9 @@
         <variable
             name="shoeDetailFragment"
             type="com.udacity.shoestore.ui.ShoeDetailFragment" />
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.viewmodels.SharedViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:textSize="@dimen/text_body"
+                android:text="@={viewModel.newShoeEntry.name}"
                 tools:text="L.A. Trainers" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -93,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:textSize="@dimen/text_body"
+                android:text="@={viewModel.newShoeEntry.company}"
                 tools:text="Adidas" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -134,6 +139,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:textSize="@dimen/text_body"
+                android:text='@={viewModel.newShoeEntry.size}'
                 tools:text="43" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -175,6 +181,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage"
                 android:textSize="@dimen/text_body"
+                android:text="@={viewModel.newShoeEntry.description}"
                 tools:text="Optimal for every-day walks" />
 
         </com.google.android.material.textfield.TextInputLayout>

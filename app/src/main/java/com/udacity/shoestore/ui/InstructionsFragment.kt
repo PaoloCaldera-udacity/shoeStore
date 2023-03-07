@@ -24,7 +24,7 @@ class InstructionsFragment : Fragment() {
          */
 
         binding.apply {
-            instructionsFragment = this@InstructionsFragment    // layout variable
+            instructionsFragment = this@InstructionsFragment    // fragment layout variable
             lifecycleOwner = viewLifecycleOwner                 // lifecycle owner
         }
 

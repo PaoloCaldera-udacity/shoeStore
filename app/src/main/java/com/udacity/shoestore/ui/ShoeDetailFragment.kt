@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
+import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.viewmodels.SharedViewModel
 import com.udacity.shoestore.viewmodels.SharedViewModelFactory
 
@@ -27,7 +28,8 @@ class ShoeDetailFragment : Fragment() {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
          */
         binding.apply {
-            shoeDetailFragment = this@ShoeDetailFragment        // layout variable
+            shoeDetailFragment = this@ShoeDetailFragment        // fragment layout variable
+            viewModel = sharedViewModel                         // viewModel layout variable
             lifecycleOwner = viewLifecycleOwner                 // lifecycle owner
         }
 
@@ -51,12 +53,7 @@ class ShoeDetailFragment : Fragment() {
         if (!checkInputFields())
             return
 
-        sharedViewModel.addToList(
-            name = binding.nameEditText.text.toString(),
-            size = binding.sizeEditText.text.toString().toDouble(),
-            company = binding.companyEditText.text.toString(),
-            description = binding.descriptionEditText.text.toString()
-        )
+        sharedViewModel.addToList()
 
         findNavController().popBackStack()
     }

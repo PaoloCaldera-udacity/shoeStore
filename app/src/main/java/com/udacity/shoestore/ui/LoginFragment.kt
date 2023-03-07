@@ -29,7 +29,7 @@ class LoginFragment : Fragment() {
          */
 
         binding.apply {
-            loginFragment = this@LoginFragment      // layout variable
+            loginFragment = this@LoginFragment      // fragment layout variable
             lifecycleOwner = viewLifecycleOwner     // lifecycle owner
         }
 
