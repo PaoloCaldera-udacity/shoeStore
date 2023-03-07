@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/shoeListFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -48,6 +48,8 @@
         android:label="@string/shoe_detail_label" >
         <action
             android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
-            app:destination="@id/shoeListFragment" />
+            app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/shoeDetailFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

@@ -22,6 +22,8 @@ class LoginFragment : Fragment() {
         binding.loginFragment = this@LoginFragment
         binding.lifecycleOwner = viewLifecycleOwner
 
+        findNavController().popBackStack()
+
         return binding.root
     }
 
