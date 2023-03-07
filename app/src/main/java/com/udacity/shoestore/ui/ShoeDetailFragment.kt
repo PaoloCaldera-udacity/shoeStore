@@ -22,18 +22,31 @@ class ShoeDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
         binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
-        binding.shoeDetailFragment = this@ShoeDetailFragment
-        binding.lifecycleOwner = viewLifecycleOwner
+        /*  OR, ALTERNATIVELY
+            binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
+         */
+        binding.apply {
+            shoeDetailFragment = this@ShoeDetailFragment        // layout variable
+            lifecycleOwner = viewLifecycleOwner                 // lifecycle owner
+        }
 
         return binding.root
     }
 
+
+    /**
+     * CANCEL button clicked: pop to the shoe-list fragment
+     */
     fun cancel() {
         findNavController().popBackStack()
     }
 
+
+    /**
+     * SAVE button clicked: check the input fields, add the shoe item to the list and then
+     * pop to the shoe-list fragment to go back
+     */
     fun save() {
         if (!checkInputFields())
             return
@@ -48,6 +61,11 @@ class ShoeDetailFragment : Fragment() {
         findNavController().popBackStack()
     }
 
+
+    /**
+     * Checks the entries; in case they are null or empty, return false and
+     * display an error message
+     */
     private fun checkInputFields(): Boolean {
         binding.nameInputLayout.isErrorEnabled = false
         binding.companyInputLayout.isErrorEnabled = false
@@ -55,6 +73,7 @@ class ShoeDetailFragment : Fragment() {
         binding.descriptionInputLayout.isErrorEnabled = false
 
         if (binding.nameEditText.text.isNullOrEmpty()) {
+            // Highlight in red the email box and display the error message
             binding.nameInputLayout.isErrorEnabled = true
             binding.nameInputLayout.error = resources.getString(R.string.error_message)
             return false

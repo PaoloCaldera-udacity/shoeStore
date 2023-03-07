@@ -10,13 +10,18 @@ import com.udacity.shoestore.models.Shoe
 
 class SharedViewModel : ViewModel() {
 
+    // LiveData variable, containing the list of Shoe objects
     private val _shoeList: MutableLiveData<MutableList<Shoe>> = MutableLiveData(mutableListOf())
     val shoeList: LiveData<MutableList<Shoe>> get() = _shoeList
 
-    // Login status. true --> logged in, false --> logged out
+    // Login status. true = logged in; false = logged out
     private var _loginStatus: Boolean = false
     val loginStatus get() = _loginStatus
 
+
+    /**
+     * Adds a Shoe item to the shoes list
+     */
     fun addToList(
         name: String,
         size: Double,
@@ -26,6 +31,10 @@ class SharedViewModel : ViewModel() {
         _shoeList.value?.add(Shoe(name, size, company, description))
     }
 
+
+    /**
+     * Change the login status
+     */
     fun editLoginStatus() {
         _loginStatus = !_loginStatus
     }
@@ -33,6 +42,9 @@ class SharedViewModel : ViewModel() {
 }
 
 
+/**
+ * Instantiate the viewModel object through the Factory class
+ */
 class SharedViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SharedViewModel::class.java)) {

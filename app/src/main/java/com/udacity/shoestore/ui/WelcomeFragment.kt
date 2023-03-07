@@ -14,6 +14,7 @@ class WelcomeFragment : Fragment() {
     private lateinit var binding: FragmentWelcomeBinding
     private lateinit var args: WelcomeFragmentArgs
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Get navigation arguments from bundle
@@ -25,10 +26,14 @@ class WelcomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
         binding = FragmentWelcomeBinding.inflate(inflater, container, false)
-        binding.welcomeFragment = this@WelcomeFragment
-        binding.lifecycleOwner = viewLifecycleOwner
+        /*  OR, ALTERNATIVELY
+            binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
+         */
+        binding.apply{
+            welcomeFragment = this@WelcomeFragment      // layout variable
+            lifecycleOwner = viewLifecycleOwner         // lifecycle owner
+        }
 
         // Insert user email in welcome sentence
         binding.welcomeTextView.text = resources.getString(R.string.welcome_text, args.userEmail)

@@ -13,19 +13,30 @@ class InstructionsFragment : Fragment() {
 
     private lateinit var binding: FragmentInstructionsBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
         binding = FragmentInstructionsBinding.inflate(inflater, container, false)
-        binding.instructionsFragment = this@InstructionsFragment
-        binding.lifecycleOwner = viewLifecycleOwner
+        /*  OR, ALTERNATIVELY
+            binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
+         */
+
+        binding.apply {
+            instructionsFragment = this@InstructionsFragment    // layout variable
+            lifecycleOwner = viewLifecycleOwner                 // lifecycle owner
+        }
 
         return binding.root
     }
 
+    /**
+     * START button clicked: pop up inclusively the back stack to the login fragment, so that
+     * there is no way for the user to get back to the boarding screens.
+     * Then, open the shoe-list fragment
+     */
     fun start() {
         findNavController().popBackStack(R.id.loginFragment, true)
         findNavController().navigate(R.id.shoeListFragment)

@@ -17,18 +17,25 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private val sharedViewModel: SharedViewModel by activityViewModels { SharedViewModelFactory() }
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-        binding.loginFragment = this@LoginFragment
-        binding.lifecycleOwner = viewLifecycleOwner
+        /*  OR, ALTERNATIVELY
+            binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+         */
+
+        binding.apply {
+            loginFragment = this@LoginFragment      // layout variable
+            lifecycleOwner = viewLifecycleOwner     // lifecycle owner
+        }
 
         return binding.root
     }
+
 
     /**
      * REGISTER button clicked
@@ -37,6 +44,7 @@ class LoginFragment : Fragment() {
         if (!checkInputFiels())
             return
 
+        // Change the login status to logged-in
         sharedViewModel.editLoginStatus()
 
         val action = LoginFragmentDirections
@@ -51,6 +59,7 @@ class LoginFragment : Fragment() {
         if (!checkInputFiels())
             return
 
+        // Change the login status to logged-in
         sharedViewModel.editLoginStatus()
 
         val action = LoginFragmentDirections
@@ -76,7 +85,6 @@ class LoginFragment : Fragment() {
         }
 
         if (binding.passwordEditText.text.isNullOrEmpty()) {
-            // Highlight in red the password box and display the error message
             binding.passwordInputLayout.isErrorEnabled = true
             binding.passwordInputLayout.error = resources.getString(R.string.error_message)
             return false
