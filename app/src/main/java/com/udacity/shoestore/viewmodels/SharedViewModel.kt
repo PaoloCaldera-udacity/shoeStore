@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.udacity.shoestore.models.Shoe
 
 
-
 class SharedViewModel : ViewModel() {
 
     // LiveData variable, containing the list of Shoe objects
@@ -15,8 +14,7 @@ class SharedViewModel : ViewModel() {
     val shoeList: LiveData<MutableList<Shoe>> get() = _shoeList
 
     // Login status. true = logged in; false = logged out
-    private var _loginStatus: Boolean = false
-    val loginStatus get() = _loginStatus
+    private var loginStatus: Boolean = false
 
 
     /**
@@ -36,7 +34,7 @@ class SharedViewModel : ViewModel() {
      * Change the login status
      */
     fun editLoginStatus() {
-        _loginStatus = !_loginStatus
+        loginStatus = !loginStatus
     }
 
 }

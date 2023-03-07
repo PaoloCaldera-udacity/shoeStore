@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp">
+        android:padding="@dimen/page_padding">
 
 
         <!-- NAME -->
@@ -22,12 +22,12 @@
             android:id="@+id/name_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/narrow_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             android:gravity="end"
             android:text="@string/shoe_name_text"
             android:textColor="?attr/colorPrimary"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_body"
             app:layout_constraintBaseline_toBaselineOf="@+id/name_inputLayout"
             app:layout_constraintEnd_toStartOf="@+id/name_inputLayout"
             app:layout_constraintHorizontal_bias="0.5"
@@ -38,8 +38,8 @@
             android:id="@+id/name_inputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/big_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_weight="3"
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_body"
                 tools:text="L.A. Trainers" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -63,12 +63,12 @@
             android:id="@+id/company_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/narrow_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             android:gravity="end"
             android:text="@string/shoe_company_text"
             android:textColor="?attr/colorPrimary"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_body"
             app:layout_constraintBaseline_toBaselineOf="@+id/company_inputLayout"
             app:layout_constraintEnd_toStartOf="@+id/company_inputLayout"
             app:layout_constraintHorizontal_bias="0.5"
@@ -79,8 +79,8 @@
             android:id="@+id/company_inputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/wide_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_weight="3"
@@ -92,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_body"
                 tools:text="Adidas" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -104,12 +104,12 @@
             android:id="@+id/size_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/narrow_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             android:gravity="end"
             android:text="@string/shoe_size_text"
             android:textColor="?attr/colorPrimary"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_body"
             app:layout_constraintBaseline_toBaselineOf="@+id/size_inputLayout"
             app:layout_constraintEnd_toStartOf="@+id/size_inputLayout"
             app:layout_constraintHorizontal_bias="0.5"
@@ -120,8 +120,8 @@
             android:id="@+id/size_inputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/wide_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_weight="3"
@@ -133,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_body"
                 tools:text="43" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -145,12 +145,12 @@
             android:id="@+id/description_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/narrow_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             android:gravity="end"
             android:text="@string/shoe_description_text"
             android:textColor="?attr/colorPrimary"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_body"
             app:layout_constraintBaseline_toBaselineOf="@+id/description_inputLayout"
             app:layout_constraintEnd_toStartOf="@+id/description_inputLayout"
             app:layout_constraintHorizontal_bias="0.5"
@@ -161,8 +161,8 @@
             android:id="@+id/description_inputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/wide_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_weight="3"
@@ -174,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_body"
                 tools:text="Optimal for every-day walks" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -184,25 +184,18 @@
 
         <Button
             android:id="@+id/cancel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="?attr/colorOnSecondary"
+            style="@style/OppositeButton"
             android:onClick="@{() -> shoeDetailFragment.cancel()}"
             android:text="@string/cancel_button"
-            android:textColor="?attr/colorSecondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/save_button"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_inputLayout"
-            app:strokeColor="?attr/colorSecondary"
-            app:strokeWidth="1dp" />
+            app:layout_constraintTop_toBottomOf="@+id/description_inputLayout" />
 
         <Button
             android:id="@+id/save_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="?attr/colorSecondary"
+            style="@style/MainButton"
             android:onClick="@{() -> shoeDetailFragment.save()}"
             android:text="@string/save_button"
             app:layout_constraintBottom_toBottomOf="@+id/cancel_button"

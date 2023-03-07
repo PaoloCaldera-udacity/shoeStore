@@ -5,7 +5,6 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ListItemViewBinding
@@ -31,14 +30,6 @@ class ShoeListFragment : Fragment() {
             shoeListFragment = this@ShoeListFragment        // layout variable
             lifecycleOwner = viewLifecycleOwner             // lifecycle owner
         }
-
-        // Navigate directly to the login fragment if the user is not logged-in
-        // (when the app is launched)
-        if (!sharedViewModel.loginStatus) {
-            val action = ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment()
-            findNavController().navigate(action)
-        }
-
 
         for (item in sharedViewModel.shoeList.value!!) {
             // Inflate the layout of the single item view

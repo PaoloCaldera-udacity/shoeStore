@@ -13,14 +13,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:padding="@dimen/page_padding">
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_inputLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/normal_margin"
             android:hint="@string/email_hint"
             android:maxEms="16"
             android:minEms="16"
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_body"
                 tools:text="paolo.caldera.94@gmail.com" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -45,7 +45,7 @@
             android:id="@+id/password_inputLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/normal_margin"
             android:hint="@string/password_hint"
             android:maxEms="16"
             android:minEms="16"
@@ -60,16 +60,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_body"
                 tools:text="thisismypassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/register_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            style="@style/SideButton"
             android:layout_marginTop="212dp"
             android:onClick="@{() -> loginFragment.register()}"
             android:text="@string/register_button"
@@ -80,12 +78,9 @@
 
         <Button
             android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+            style="@style/MainButton"
             android:onClick="@{() -> loginFragment.login()}"
             android:text="@string/login_button"
-            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/register_button"

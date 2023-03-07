@@ -15,7 +15,7 @@ import com.udacity.shoestore.viewmodels.SharedViewModelFactory
 class ShoeDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentShoeDetailBinding
-    private val sharedViewModel: SharedViewModel by activityViewModels {SharedViewModelFactory()}
+    private val sharedViewModel: SharedViewModel by activityViewModels { SharedViewModelFactory() }
 
     override fun onCreateView(
         inflater: LayoutInflater,

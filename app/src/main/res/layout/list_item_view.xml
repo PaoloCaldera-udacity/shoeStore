@@ -3,6 +3,7 @@
 <layout>
 
     <data>
+
         <variable
             name="shoeItem"
             type="com.udacity.shoestore.models.Shoe" />
@@ -13,29 +14,29 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="@dimen/item_padding">
 
         <TextView
             android:id="@+id/item_company_name_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnBackground"
-            android:textSize="24sp"
-            android:textStyle="bold"
             android:text="@{@string/company_title_text(shoeItem.company, shoeItem.name)}"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="@dimen/text_heading"
+            android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Adidas   L. A. Trainers" />
+            tools:text="Adidas L. A. Trainers" />
 
         <TextView
             android:id="@+id/item_size_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textColor="?attr/colorOnBackground"
-            android:textSize="20sp"
+            android:layout_marginTop="@dimen/small_margin"
             android:text="@{@string/size_text(shoeItem.size)}"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="@dimen/text_important"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_company_name_textView"
@@ -45,10 +46,10 @@
             android:id="@+id/item_description_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textColor="?attr/colorOutline"
-            android:textSize="16sp"
+            android:layout_marginTop="@dimen/narrow_margin"
             android:text="@{shoeItem.description}"
+            android:textColor="?attr/colorOutline"
+            android:textSize="@dimen/text_body"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_size_textView"
@@ -56,11 +57,11 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/separator_width"
+            android:layout_marginTop="@dimen/normal_margin"
             android:background="?attr/dividerHorizontal"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/item_description_textView"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_description_textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
