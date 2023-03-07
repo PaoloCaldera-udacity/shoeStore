@@ -1,11 +1,11 @@
 package com.udacity.shoestore.ui
 
-import android.app.LauncherActivity.ListItem
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ListItemViewBinding
@@ -17,15 +17,21 @@ class ShoeListFragment : Fragment() {
     private lateinit var binding: FragmentShoeListBinding
     private val sharedViewModel: SharedViewModel by activityViewModels { SharedViewModelFactory() }
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         binding = FragmentShoeListBinding.inflate(inflater, container, false)
         binding.shoeListFragment = this@ShoeListFragment
         binding.lifecycleOwner = viewLifecycleOwner
+
+        if (!sharedViewModel.loginStatus) {
+            val action = ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment()
+            findNavController().navigate(action)
+        }
 
         for (item in sharedViewModel.shoeList.value!!) {
             val listItemBinding = ListItemViewBinding.inflate(
@@ -55,6 +61,7 @@ class ShoeListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.logout_option -> {
+                sharedViewModel.editLoginStatus()
                 val action = ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment()
                 findNavController().navigate(action)
                 return true

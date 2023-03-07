@@ -22,6 +22,7 @@ class ShoeDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
         binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
         binding.shoeDetailFragment = this@ShoeDetailFragment
         binding.lifecycleOwner = viewLifecycleOwner
@@ -30,8 +31,7 @@ class ShoeDetailFragment : Fragment() {
     }
 
     fun cancel() {
-        val action = ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment()
-        findNavController().navigate(action)
+        findNavController().popBackStack()
     }
 
     fun save() {
@@ -44,8 +44,8 @@ class ShoeDetailFragment : Fragment() {
             company = binding.companyEditText.text.toString(),
             description = binding.descriptionEditText.text.toString()
         )
-        val action = ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment()
-        findNavController().navigate(action)
+
+        findNavController().popBackStack()
     }
 
     private fun checkInputFields(): Boolean {

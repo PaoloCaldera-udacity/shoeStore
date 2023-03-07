@@ -9,7 +9,8 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <!--<com.google.android.material.appbar.AppBarLayout
+        <!--
+        <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,7 +26,11 @@
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        </com.google.android.material.appbar.AppBarLayout>-->
+        </com.google.android.material.appbar.AppBarLayout>
+        -->
+
+        <!-- NOTE: AppBar has been already included in the theme used by the application.
+        Check the AndroidManifest.xml file, android:theme="@style/Theme.ShoeStore" -->
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"

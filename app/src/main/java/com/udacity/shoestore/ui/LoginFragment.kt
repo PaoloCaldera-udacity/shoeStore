@@ -5,24 +5,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
+import com.udacity.shoestore.viewmodels.SharedViewModel
+import com.udacity.shoestore.viewmodels.SharedViewModelFactory
 
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
+    private val sharedViewModel: SharedViewModel by activityViewModels { SharedViewModelFactory() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         binding.loginFragment = this@LoginFragment
         binding.lifecycleOwner = viewLifecycleOwner
-
-        findNavController().popBackStack()
 
         return binding.root
     }
@@ -33,6 +36,8 @@ class LoginFragment : Fragment() {
     fun register() {
         if (!checkInputFiels())
             return
+
+        sharedViewModel.editLoginStatus()
 
         val action = LoginFragmentDirections
             .actionLoginFragmentToWelcomeFragment(binding.emailEditText.text.toString())
@@ -45,6 +50,8 @@ class LoginFragment : Fragment() {
     fun login() {
         if (!checkInputFiels())
             return
+
+        sharedViewModel.editLoginStatus()
 
         val action = LoginFragmentDirections
             .actionLoginFragmentToWelcomeFragment(binding.emailEditText.text.toString())

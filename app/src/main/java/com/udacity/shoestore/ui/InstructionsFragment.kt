@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
 
 class InstructionsFragment : Fragment() {
@@ -17,6 +18,7 @@ class InstructionsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
         binding = FragmentInstructionsBinding.inflate(inflater, container, false)
         binding.instructionsFragment = this@InstructionsFragment
         binding.lifecycleOwner = viewLifecycleOwner
@@ -25,7 +27,7 @@ class InstructionsFragment : Fragment() {
     }
 
     fun start() {
-        val action = InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()
-        findNavController().navigate(action)
+        findNavController().popBackStack(R.id.loginFragment, true)
+        findNavController().navigate(R.id.shoeListFragment)
     }
 }
