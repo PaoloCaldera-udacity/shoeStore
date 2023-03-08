@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="com.udacity.shoestore.viewmodels.Converter"/>
+
         <variable
             name="shoeDetailFragment"
             type="com.udacity.shoestore.ui.ShoeDetailFragment" />
@@ -144,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:text='@={"" + viewModel.shoeEntry.size}'
+                android:text='@={Converter.doubleToString(viewModel.shoeEntry.size)}'
                 android:textSize="@dimen/text_body"
                 tools:text="43" />
 

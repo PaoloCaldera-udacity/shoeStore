@@ -1,5 +1,6 @@
 package com.udacity.shoestore.viewmodels
 
+import androidx.databinding.InverseMethod
 import androidx.lifecycle.*
 import com.udacity.shoestore.models.Shoe
 
@@ -58,11 +59,33 @@ class SharedViewModel : ViewModel() {
 /**
  * ViewModel FACTORY class
  */
+@Suppress("UNCHECKED_CAST")
 class SharedViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SharedViewModel::class.java)) {
             return SharedViewModel() as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}
+
+
+/**
+ * CONVERTER object from double to string and viceversa, applied to the size variable in Shoe
+ */
+object Converter {
+    @InverseMethod("stringToDouble")
+    @JvmStatic fun doubleToString(
+        value: Double
+    ): String {
+        if (value.isNaN()) return ""
+        return value.toString()
+    }
+
+    @JvmStatic fun stringToDouble(
+        value: String
+    ): Double {
+        if (value.isEmpty()) return 0.0
+        return value.toDouble()
     }
 }
