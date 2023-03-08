@@ -17,6 +17,7 @@ class ShoeDetailFragment : Fragment() {
     private lateinit var binding: FragmentShoeDetailBinding
     private val sharedViewModel: SharedViewModel by activityViewModels { SharedViewModelFactory() }
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -43,7 +44,6 @@ class ShoeDetailFragment : Fragment() {
         sharedViewModel.backToList()
         findNavController().popBackStack()
     }
-
 
     /**
      * SAVE button clicked: check the input fields, add the shoe item to the list and then

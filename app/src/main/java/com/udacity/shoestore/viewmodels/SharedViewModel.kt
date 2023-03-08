@@ -56,7 +56,7 @@ class SharedViewModel : ViewModel() {
 
 
 /**
- * Instantiate the viewModel object through the Factory class
+ * ViewModel FACTORY class
  */
 class SharedViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

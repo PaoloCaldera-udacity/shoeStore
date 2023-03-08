@@ -8,6 +8,7 @@
         <variable
             name="shoeDetailFragment"
             type="com.udacity.shoestore.ui.ShoeDetailFragment" />
+
         <variable
             name="viewModel"
             type="com.udacity.shoestore.viewmodels.SharedViewModel" />
@@ -59,8 +60,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textSize="@dimen/text_body"
                 android:text="@={viewModel.shoeEntry.name}"
+                android:textSize="@dimen/text_body"
                 tools:text="L.A. Trainers" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -101,8 +102,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textSize="@dimen/text_body"
                 android:text="@={viewModel.shoeEntry.company}"
+                android:textSize="@dimen/text_body"
                 tools:text="Adidas" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -143,8 +144,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:textSize="@dimen/text_body"
                 android:text='@={"" + viewModel.shoeEntry.size}'
+                android:textSize="@dimen/text_body"
                 tools:text="43" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -185,8 +186,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage"
-                android:textSize="@dimen/text_body"
                 android:text="@={viewModel.shoeEntry.description}"
+                android:textSize="@dimen/text_body"
                 tools:text="Optimal for every-day walks" />
 
         </com.google.android.material.textfield.TextInputLayout>
