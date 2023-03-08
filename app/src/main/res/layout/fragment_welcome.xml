@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,50 +9,46 @@
             type="com.udacity.shoestore.ui.WelcomeFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <!-- LinearLayout has been chosen as the ViewGroup because it is desired to position vertically
+    all the child views (centered horizontally) - user can then play with margins to make the child
+    views closer or farther from each other.
+    ConstraintLayout is not the best choice in this case since, in addition to the margins, the user
+    must also provide all the view constraints. -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
         android:padding="@dimen/page_padding">
 
         <TextView
             android:id="@+id/welcome_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/wide_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
             android:gravity="center_horizontal"
             android:textColor="?attr/colorOnBackground"
             android:textSize="@dimen/text_heading"
-            app:layout_constraintBottom_toTopOf="@+id/message_textView"
-            app:layout_constraintEnd_toEndOf="@+id/message_textView"
-            app:layout_constraintStart_toStartOf="@+id/message_textView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
             tools:text="Welcome,\npaolo.caldera.94@gmail.com!" />
 
         <TextView
             android:id="@+id/message_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/big_margin"
             android:gravity="center_horizontal"
             android:text="@string/welcome_description"
             android:textColor="?attr/colorOnBackground"
-            android:textSize="@dimen/text_body"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="@dimen/text_body" />
 
         <Button
             android:id="@+id/read_instructions_button"
             style="@style/MainButton"
-            android:layout_marginBottom="@dimen/wide_margin"
+            android:layout_marginTop="@dimen/big_margin"
             android:onClick="@{() -> welcomeFragment.readInstructions()}"
-            android:text="@string/instructions_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/message_textView"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/message_textView"
-            app:layout_constraintTop_toBottomOf="@+id/message_textView"
-            app:layout_constraintVertical_bias="1.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@string/instructions_button" />
+    </LinearLayout>
 </layout>

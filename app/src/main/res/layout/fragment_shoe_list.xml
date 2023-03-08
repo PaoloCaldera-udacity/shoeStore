@@ -9,6 +9,10 @@
             type="com.udacity.shoestore.ui.ShoeListFragment" />
     </data>
 
+
+    <!-- ConstraintLayout has been used as the ViewGroup in order to easily allow the superposition
+     of the FloatingActionButton on the scrolling list. -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
