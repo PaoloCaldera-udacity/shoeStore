@@ -28,6 +28,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <!-- LinearLayout is used here to display in a vertical orientation all the shoe
+            items added in the list with the addView() method. -->
             <LinearLayout
                 android:id="@+id/shoe_list_linearLayout"
                 android:layout_width="match_parent"
