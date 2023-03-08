@@ -9,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
-import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.viewmodels.SharedViewModel
 import com.udacity.shoestore.viewmodels.SharedViewModelFactory
 
@@ -41,6 +40,7 @@ class ShoeDetailFragment : Fragment() {
      * CANCEL button clicked: pop to the shoe-list fragment
      */
     fun cancel() {
+        sharedViewModel.backToList()
         findNavController().popBackStack()
     }
 
@@ -54,7 +54,6 @@ class ShoeDetailFragment : Fragment() {
             return
 
         sharedViewModel.addToList()
-
         findNavController().popBackStack()
     }
 

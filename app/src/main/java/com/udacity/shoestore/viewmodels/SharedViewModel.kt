@@ -1,9 +1,6 @@
 package com.udacity.shoestore.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.udacity.shoestore.models.Shoe
 
 
@@ -14,27 +11,14 @@ class SharedViewModel : ViewModel() {
     val shoeList: LiveData<MutableList<Shoe>> get() = _shoeList
 
     // LiveData variable: new Shoe entry (2-way data binding)
-    val shoeNameEntry: MutableLiveData<String> = MutableLiveData()
-    val shoeCompanyEntry: MutableLiveData<String> = MutableLiveData()
-    val shoeSizeEntry: MutableLiveData<String> = MutableLiveData()
-    val shoeDescriptionEntry: MutableLiveData<String> = MutableLiveData()
+    val shoeEntry: MutableLiveData<Shoe> = MutableLiveData()
 
     // Login status. true = logged in; false = logged out
     private var loginStatus: Boolean = false
 
 
-    /**
-     * Adds a Shoe item to the shoes list
-     */
-    fun addToList() {
-        _shoeList.value?.add(Shoe(
-            name = shoeNameEntry.value!!,
-            size = shoeSizeEntry.value!!.toDouble(),
-            company = shoeCompanyEntry.value!!,
-            description = shoeDescriptionEntry.value!!
-        ))
-
-        cleanEntry()
+    init {
+        cleanShoeEntry()
     }
 
 
@@ -45,14 +29,29 @@ class SharedViewModel : ViewModel() {
         loginStatus = !loginStatus
     }
 
-
-    private fun cleanEntry() {
-        shoeNameEntry.value = ""
-        shoeSizeEntry.value = ""
-        shoeCompanyEntry.value = ""
-        shoeDescriptionEntry.value = ""
+    /**
+     * Function called in case the SAVE button is pressed. Adds a Shoe item to the shoes list
+     * and cleans the new entry
+     */
+    fun addToList() {
+        _shoeList.value?.add(shoeEntry.value!!)
+        cleanShoeEntry()
     }
 
+    /**
+     * Function called in case the CANCEL button is pressed. Cleans the new entry
+     */
+    fun backToList() {
+        cleanShoeEntry()
+    }
+
+
+    /**
+     * Cleans the shoeEntry variable when navigation goes back to the list
+     */
+    private fun cleanShoeEntry() {
+        shoeEntry.value = Shoe("", 0.0, "", "")
+    }
 }
 
 
