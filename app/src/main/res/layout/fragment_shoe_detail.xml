@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:textSize="@dimen/text_body"
-                android:text="@={viewModel.newShoeEntry.name}"
+                android:text="@={viewModel.shoeNameEntry}"
                 tools:text="L.A. Trainers" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:textSize="@dimen/text_body"
-                android:text="@={viewModel.newShoeEntry.company}"
+                android:text="@={viewModel.shoeCompanyEntry}"
                 tools:text="Adidas" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -139,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:textSize="@dimen/text_body"
-                android:text='@={viewModel.newShoeEntry.size}'
+                android:text='@={viewModel.shoeSizeEntry}'
                 tools:text="43" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -181,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage"
                 android:textSize="@dimen/text_body"
-                android:text="@={viewModel.newShoeEntry.description}"
+                android:text="@={viewModel.shoeDescriptionEntry}"
                 tools:text="Optimal for every-day walks" />
 
         </com.google.android.material.textfield.TextInputLayout>
