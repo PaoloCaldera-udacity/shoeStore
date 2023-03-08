@@ -22,14 +22,14 @@ class InstructionsFragment : Fragment() {
         /*  OR, ALTERNATIVELY
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
          */
-
         binding.apply {
-            instructionsFragment = this@InstructionsFragment    // layout variable
+            instructionsFragment = this@InstructionsFragment    // fragment layout variable
             lifecycleOwner = viewLifecycleOwner                 // lifecycle owner
         }
 
         return binding.root
     }
+
 
     /**
      * START button clicked: pop up inclusively the back stack to the login fragment, so that

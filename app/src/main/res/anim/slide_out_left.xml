@@ -10,5 +10,4 @@
         android:duration="@integer/material_motion_duration_medium_1"
         android:fromAlpha="1"
         android:toAlpha="0" />
-
 </set>

@@ -17,6 +17,7 @@ class ShoeDetailFragment : Fragment() {
     private lateinit var binding: FragmentShoeDetailBinding
     private val sharedViewModel: SharedViewModel by activityViewModels { SharedViewModelFactory() }
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,7 +28,8 @@ class ShoeDetailFragment : Fragment() {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
          */
         binding.apply {
-            shoeDetailFragment = this@ShoeDetailFragment        // layout variable
+            shoeDetailFragment = this@ShoeDetailFragment        // fragment layout variable
+            viewModel = sharedViewModel                         // viewModel layout variable
             lifecycleOwner = viewLifecycleOwner                 // lifecycle owner
         }
 
@@ -39,9 +41,9 @@ class ShoeDetailFragment : Fragment() {
      * CANCEL button clicked: pop to the shoe-list fragment
      */
     fun cancel() {
+        sharedViewModel.backToList()
         findNavController().popBackStack()
     }
-
 
     /**
      * SAVE button clicked: check the input fields, add the shoe item to the list and then
@@ -51,13 +53,7 @@ class ShoeDetailFragment : Fragment() {
         if (!checkInputFields())
             return
 
-        sharedViewModel.addToList(
-            name = binding.nameEditText.text.toString(),
-            size = binding.sizeEditText.text.toString().toDouble(),
-            company = binding.companyEditText.text.toString(),
-            description = binding.descriptionEditText.text.toString()
-        )
-
+        sharedViewModel.addToList()
         findNavController().popBackStack()
     }
 

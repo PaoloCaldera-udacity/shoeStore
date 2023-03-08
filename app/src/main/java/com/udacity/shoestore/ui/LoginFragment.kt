@@ -27,9 +27,8 @@ class LoginFragment : Fragment() {
         /*  OR, ALTERNATIVELY
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
          */
-
         binding.apply {
-            loginFragment = this@LoginFragment      // layout variable
+            loginFragment = this@LoginFragment      // fragment layout variable
             lifecycleOwner = viewLifecycleOwner     // lifecycle owner
         }
 

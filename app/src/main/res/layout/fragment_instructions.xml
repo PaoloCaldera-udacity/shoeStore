@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -9,66 +8,56 @@
             type="com.udacity.shoestore.ui.InstructionsFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <!-- LinearLayout has been chosen: the reason is the same as commented in fragment_welcome.xml
+    -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         android:padding="@dimen/page_padding">
 
         <TextView
             android:id="@+id/title_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/narrow_margin"
             android:gravity="center_horizontal"
             android:text="@string/title_text"
             android:textColor="?attr/colorPrimary"
-            android:textSize="@dimen/text_heading"
-            app:layout_constraintBottom_toTopOf="@+id/instructions_textView"
-            app:layout_constraintEnd_toEndOf="@+id/instructions_textView"
-            app:layout_constraintStart_toStartOf="@+id/instructions_textView" />
+            android:textSize="@dimen/text_heading" />
 
         <TextView
             android:id="@+id/instructions_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/wide_margin"
             android:gravity="center_horizontal"
             android:paddingStart="@dimen/narrow_margin"
             android:paddingEnd="@dimen/narrow_margin"
             android:text="@string/instructions_text"
             android:textColor="?attr/colorOutline"
-            android:textSize="@dimen/text_body"
-            app:layout_constraintBottom_toTopOf="@+id/begin_textView"
-            app:layout_constraintEnd_toEndOf="@+id/begin_textView"
-            app:layout_constraintStart_toStartOf="@+id/begin_textView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            android:textSize="@dimen/text_body" />
 
         <TextView
             android:id="@+id/begin_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/wide_margin"
+            android:layout_marginBottom="@dimen/wide_margin"
             android:gravity="center_horizontal"
             android:text="@string/begin_text"
             android:textColor="?attr/colorOnBackground"
-            android:textSize="@dimen/text_important"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.619" />
+            android:textSize="@dimen/text_important" />
 
         <Button
             android:id="@+id/start_button"
             style="@style/MainButton"
+            android:layout_marginTop="@dimen/big_margin"
             android:onClick="@{() -> instructionsFragment.start()}"
-            android:text="@string/start_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/begin_textView"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="@+id/begin_textView"
-            app:layout_constraintTop_toBottomOf="@+id/begin_textView"
-            app:layout_constraintVertical_bias="0.5" />
+            android:text="@string/start_button" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

@@ -10,6 +10,10 @@
             type="com.udacity.shoestore.ui.LoginFragment" />
     </data>
 
+
+    <!-- Use of ConstraintLayout as the ViewGroup is motivated by the user desire to have
+    an horizontal chain of the two buttons. -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

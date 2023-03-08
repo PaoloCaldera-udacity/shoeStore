@@ -5,10 +5,21 @@
 
     <data>
 
+        <import type="com.udacity.shoestore.viewmodels.Converter"/>
+
         <variable
             name="shoeDetailFragment"
             type="com.udacity.shoestore.ui.ShoeDetailFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.viewmodels.SharedViewModel" />
     </data>
+
+
+    <!-- ConstraintLayout has been chosen due to the huge number and position of the child views.
+     ConstraintLayout allows to avoid the usage of nested ViewGroups and to easily create the
+     buttons horizontal chain. -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -51,6 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:text="@={viewModel.shoeEntry.name}"
                 android:textSize="@dimen/text_body"
                 tools:text="L.A. Trainers" />
 
@@ -92,6 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:text="@={viewModel.shoeEntry.company}"
                 android:textSize="@dimen/text_body"
                 tools:text="Adidas" />
 
@@ -133,6 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
+                android:text='@={Converter.doubleToString(viewModel.shoeEntry.size)}'
                 android:textSize="@dimen/text_body"
                 tools:text="43" />
 
@@ -174,6 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage"
+                android:text="@={viewModel.shoeEntry.description}"
                 android:textSize="@dimen/text_body"
                 tools:text="Optimal for every-day walks" />
 
