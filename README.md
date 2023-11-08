@@ -10,6 +10,7 @@ The project focuses on building and managing the application layout, and demonst
 The project consists of initial screens - login and general information - for introducing the user to the application, and then of two screens for implementing a shoe store, one displaying all the shoes saved in a list and another one to add or modify a shoe entry.
 Visit the [Wiki]() to see the application screens.
 
+
 ## Getting Started
 
 To clone the repository, use the command
@@ -20,7 +21,7 @@ or the `Get from VCS` option inside Android Studio by copying the link above.
 
 Then, run the application on an Android device or emulator.
 
-##Steps
+## Steps
 
 1. Open the starter project in Android Studio
 
@@ -82,3 +83,8 @@ Then, run the application on an Android device or emulator.
     * Observe the shoes variable from the ViewModel
     * Use DataBindingUtil to inflate the shoe_list layout
     * Add a new layout item into the scrollview for each shoe.
+
+
+## License
+
+Shoe Store is a public project that can be downloaded and modified under the terms and conditions of the MIT License.
